@@ -16,10 +16,12 @@ body {
 .page {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;   /* <-- stack card + footer vertically */
+  align-items: center;      /* center them horizontally */
+  justify-content: center;  /* center the whole column vertically */
   padding: 24px;
 }
+
 
 /* --- Main card --- */
 
@@ -180,5 +182,6 @@ body {
 .footer-contact a:hover {
   text-decoration: underline;
 }
+
 
 
