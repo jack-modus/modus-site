@@ -10,56 +10,90 @@ body {
   min-height: 100vh; /* centers vertically */
 }
 
+/* Container for all content */
 .container {
   max-width: 600px;
   padding: 20px;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 32px;
-}
-
+/* Logo (desktop size, scales down on mobile) */
 .logo {
-  width: 240px;         /* adjust size as needed */
+  width: 240px;
+  height: auto;
   margin: 20px 0;
 }
 
-p1 {
-  display: block;       /* so it behaves like a normal paragraph */
+/* Intro paragraph */
+.p1 {
+  display: block;
   font-size: 18px;
   color: #555;
   margin-bottom: 30px;
 }
 
-p2 {
-  display: block;       /* so it behaves like a normal paragraph */
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 30px;
+/* Wrapper for P2/P3 + buttons */
+.cta-wrapper {
+  display: flex;
+  flex-direction: column; /* mobile default */
+  gap: 30px;
 }
 
-p3 {
-  display: block;       /* so it behaves like a normal paragraph */
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 30px;
+/* Each card containing P2 or P3 + their button */
+.cta-block {
+  text-align: center;
 }
 
+/* P2 and P3 styles */
+.p2,
+.p3 {
+  display: block;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
 a.btn {
   display: inline-block;
   padding: 12px 24px;
   text-decoration: none;
-  background: #000;   /* black button */
-  color: #fff;        /* white text */
+  background: #000;
+  color: #fff;
   font-size: 18px;
   border-radius: 6px;
   transition: background 0.2s;
 }
 
 a.btn:hover {
-  background: #333;   /* dark grey on hover */
+  background: #333;
 }
 
+/* Desktop/tablet layout */
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
 
+  .cta-wrapper {
+    flex-direction: row; /* side-by-side */
+    justify-content: center;
+  }
+
+  .cta-block {
+    flex: 1;
+    margin: 0 10px;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .logo {
+    width: 160px; /* smaller on small phones */
+  }
+
+  .p1,
+  .p2,
+  .p3 {
+    font-size: 17px;
+  }
+}
