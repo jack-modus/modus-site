@@ -7,43 +7,43 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* centers vertically */
+  min-height: 100vh; /* centers container vertically */
 }
 
-/* Container for all content */
+/* Main content wrapper */
 .container {
-  max-width: 600px;
+  max-width: 900px;   /* wider to allow two columns */
   padding: 20px;
 }
 
-/* Logo (desktop size, scales down on mobile) */
+/* Logo */
 .logo {
-  width: 240px;
+  width: 240px;       /* good size for desktop/tablet */
   height: auto;
-  margin: 20px 0;
+  margin: 20px 0 30px;
 }
 
-/* Intro paragraph */
+/* P1 – full-width intro text */
 .p1 {
   display: block;
   font-size: 18px;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* Wrapper for P2/P3 + buttons */
+/* WRAPPER for the two columns (P2+button, P3+button) */
 .cta-wrapper {
   display: flex;
-  flex-direction: column; /* mobile default */
-  gap: 30px;
+  flex-direction: column; /* mobile default: stacked */
+  gap: 40px;
 }
 
-/* Each card containing P2 or P3 + their button */
+/* Each column block */
 .cta-block {
   text-align: center;
 }
 
-/* P2 and P3 styles */
+/* P2 and P3 text */
 .p2,
 .p3 {
   display: block;
@@ -57,7 +57,7 @@ a.btn {
   display: inline-block;
   padding: 12px 24px;
   text-decoration: none;
-  background: #000;
+  background: #000;   /* black button */
   color: #fff;
   font-size: 18px;
   border-radius: 6px;
@@ -65,17 +65,13 @@ a.btn {
 }
 
 a.btn:hover {
-  background: #333;
+  background: #333;   /* dark grey on hover */
 }
 
-/* Desktop/tablet layout */
+/* ---------- WIDER SCREENS: TWO COLUMNS ---------- */
 @media (min-width: 768px) {
-  .container {
-    max-width: 900px;
-  }
-
   .cta-wrapper {
-    flex-direction: row; /* side-by-side */
+    flex-direction: row;      /* now side-by-side */
     justify-content: center;
   }
 
@@ -85,15 +81,15 @@ a.btn:hover {
   }
 }
 
-/* Mobile-specific adjustments */
+/* ---------- SMALL MOBILES: tweak logo + text size ---------- */
 @media (max-width: 480px) {
   .logo {
-    width: 160px; /* smaller on small phones */
+    width: 160px;             /* smaller logo on phones */
   }
 
   .p1,
   .p2,
   .p3 {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
