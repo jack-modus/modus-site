@@ -40,6 +40,13 @@ p2 {
   margin-bottom: 30px;
 }
 
+p3 {
+  display: block;       /* so it behaves like a normal paragraph */
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
 a.btn {
   display: inline-block;
   padding: 12px 24px;
@@ -54,4 +61,5 @@ a.btn {
 a.btn:hover {
   background: #333;   /* dark grey on hover */
 }
+
 
