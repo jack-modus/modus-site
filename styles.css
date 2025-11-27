@@ -67,9 +67,10 @@ body {
   background: #f9fafb;
   border-radius: 12px;
   padding: 20px 20px 22px;
-  text-align: left;
+  text-align: center;          /* ← NEW: centre all text */
   border: 1px solid #e5e7eb;
 }
+
 
 /* Small heading above each paragraph */
 
@@ -93,7 +94,8 @@ body {
 /* Buttons */
 
 .btn {
-  display: inline-block;
+  display: inline-block;        /* stays inline but will centre because parent is centered */
+  margin: 0 auto;               /* ← NEW: ensures centred inside card */
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 600;
@@ -104,6 +106,7 @@ body {
   color: #ffffff;
   transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease, color 0.08s ease;
 }
+
 
 .btn:hover {
   background: #000000;
@@ -161,3 +164,4 @@ body {
     font-size: 15px;
   }
 }
+
