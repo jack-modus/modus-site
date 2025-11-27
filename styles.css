@@ -1,95 +1,163 @@
+/* --- Page base --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.page {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* centers container vertically */
+  padding: 24px;
 }
 
-/* Main content wrapper */
-.container {
-  max-width: 900px;   /* wider to allow two columns */
-  padding: 20px;
-}
+/* --- Main card --- */
 
-/* Logo */
-.logo {
-  width: 240px;       /* good size for desktop/tablet */
-  height: auto;
-  margin: 20px 0 30px;
-}
-
-/* P1 – full-width intro text */
-.p1 {
-  display: block;
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-/* WRAPPER for the two columns (P2+button, P3+button) */
-.cta-wrapper {
-  display: flex;
-  flex-direction: column; /* mobile default: stacked */
-  gap: 40px;
-}
-
-/* Each column block */
-.cta-block {
+.card {
+  background: #ffffff;
+  max-width: 960px;
+  width: 100%;
+  padding: 32px 32px 36px;
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
   text-align: center;
 }
 
-/* P2 and P3 text */
+/* Logo */
+
+.logo {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+/* P1 – intro */
+
+.p1 {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* --- CTA area (P2/P3 + buttons) --- */
+
+.cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each column block */
+
+.cta-block {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px 20px 22px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+/* Small heading above each paragraph */
+
+.cta-heading {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* P2 + P3 */
+
 .p2,
 .p3 {
-  display: block;
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4b5563;
 }
 
 /* Buttons */
-a.btn {
+
+.btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
   text-decoration: none;
-  background: #000;   /* black button */
-  color: #fff;
-  font-size: 18px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #ffffff;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease, color 0.08s ease;
 }
 
-a.btn:hover {
-  background: #333;   /* dark grey on hover */
+.btn:hover {
+  background: #000000;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  transform: translateY(-1px);
 }
 
-/* ---------- WIDER SCREENS: TWO COLUMNS ---------- */
+/* Second button style (still minimal, slightly lighter) */
+
+.btn-outline {
+  background: #ffffff;
+  color: #111827;
+}
+
+.btn-outline:hover {
+  background: #111827;
+  color: #ffffff;
+}
+
+/* --- Desktop / tablet layout: two columns --- */
+
 @media (min-width: 768px) {
+  .card {
+    padding: 40px 40px 44px;
+  }
+
   .cta-wrapper {
-    flex-direction: row;      /* now side-by-side */
-    justify-content: center;
+    flex-direction: row;
   }
 
   .cta-block {
     flex: 1;
-    margin: 0 10px;
   }
 }
 
-/* ---------- SMALL MOBILES: tweak logo + text size ---------- */
+/* --- Small mobile tweaks --- */
+
 @media (max-width: 480px) {
-  .logo {
-    width: 160px;             /* smaller logo on phones */
+  .card {
+    padding: 24px 20px 28px;
   }
 
-  .p1,
+  .logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .p1 {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
   .p2,
   .p3 {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
